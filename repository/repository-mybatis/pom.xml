@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.acmedcare.framework</groupId>
+        <artifactId>devops-repository</artifactId>
+        <version>0.1.0.BUILD-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>devops-repository-mybatis</artifactId>
+
+    <name>Acmedcare+ DevOps Project Repository Mybatis Module :: ${project.version}</name>
+    <description>🏗 Acmedcare+ Repository Mybatis Module</description>
+
+    <properties>
+        <!-- Deploy Properties -->
+        <maven.deploy.skip>true</maven.deploy.skip>
+    </properties>
+
+    <dependencies>
+
+        <!-- Spring Boot Starter-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- Normal libs -->
+        <dependency>
+            <groupId>com.acmedcare.framework</groupId>
+            <artifactId>devops-repository-api</artifactId>
+        </dependency>
+
+        <!-- Spring Boot JDBC Support -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <!-- mybatis plus lib -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+
+    </dependencies>
+
+
+</project>

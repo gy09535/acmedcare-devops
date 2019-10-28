@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.acmedcare.framework</groupId>
+        <artifactId>devops-parent</artifactId>
+        <version>0.1.0.BUILD-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>devops-repository</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Acmedcare+ DevOps Project Repository Module :: ${project.version}</name>
+    <description>🏗 Acmedcare+ Repository Module</description>
+
+    <properties>
+        <!-- Deploy Properties -->
+        <maven.deploy.skip>true</maven.deploy.skip>
+    </properties>
+
+
+    <modules>
+        <module>repository-api</module>
+        <module>repository-mybatis</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>devops-repository-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>devops-repository-mybatis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>

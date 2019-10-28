@@ -1,0 +1,7 @@
+# AutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.acmedcare.framework.devops.repository.mybatis.autoconfigure.MybatisMapperAutoConfiguration
+
+# EnvironmentPostProcessor
+org.springframework.boot.env.EnvironmentPostProcessor=\
+  com.acmedcare.framework.devops.repository.mybatis.env.MybatisPropertiesEnvironmentPostProcessor
