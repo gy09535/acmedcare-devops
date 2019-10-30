@@ -10,5 +10,5 @@ import org.springframework.context.annotation.Configuration;
  * @version ${project.version} - 2019-03-12.
  */
 @Configuration
-@MapperScan({"com.acmedcare.framework.microservices.template.repository"})
+@MapperScan({"com.acmedcare.framework.devops.repository"})
 public class MybatisMapperAutoConfiguration {}
