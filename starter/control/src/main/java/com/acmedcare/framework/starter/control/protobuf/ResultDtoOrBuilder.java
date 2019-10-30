@@ -8,14 +8,8 @@ public interface ResultDtoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string success = 1;</code>
+   * <code>bool success = 1;</code>
    * @return The success.
    */
-  String getSuccess();
-  /**
-   * <code>string success = 1;</code>
-   * @return The bytes for success.
-   */
-  com.google.protobuf.ByteString
-      getSuccessBytes();
+  boolean getSuccess();
 }

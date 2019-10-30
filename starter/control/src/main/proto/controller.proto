@@ -15,7 +15,7 @@ service DevOpsController {
 
   rpc stop (RequestDto) returns (ResultDto) {}
 
-  rpc getInfo (RequestDto) returns (ResultDto) {}
+  rpc getInfo (RequestDto) returns (ServiceDto) {}
 }
 
 message RequestDto{
@@ -23,7 +23,7 @@ message RequestDto{
 }
 
 message ResultDto {
-  	string success=1;
+  	bool success=1;
 }
 
 message ServiceDto {

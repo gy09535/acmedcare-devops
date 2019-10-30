@@ -11,7 +11,7 @@ public interface RequestDtoOrBuilder extends
    * <code>string data = 1;</code>
    * @return The data.
    */
-  String getData();
+  java.lang.String getData();
   /**
    * <code>string data = 1;</code>
    * @return The bytes for data.

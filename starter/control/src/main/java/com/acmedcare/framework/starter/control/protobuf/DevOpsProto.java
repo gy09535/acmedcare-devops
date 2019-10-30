@@ -37,12 +37,12 @@ public final class DevOpsProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\020controller.proto\0220com.acmedcare.framew" +
       "ork.starter.control.protobuf\"\032\n\nRequestD" +
       "to\022\014\n\004data\030\001 \001(\t\"\034\n\tResultDto\022\017\n\007success" +
-      "\030\001 \001(\t\"3\n\nServiceDto\022\014\n\004name\030\001 \001(\t\022\n\n\002ip" +
-      "\030\002 \001(\t\022\013\n\003por\030\003 \001(\t2\257\004\n\020DevOpsController" +
+      "\030\001 \001(\010\"3\n\nServiceDto\022\014\n\004name\030\001 \001(\t\022\n\n\002ip" +
+      "\030\002 \001(\t\022\013\n\003por\030\003 \001(\t2\260\004\n\020DevOpsController" +
       "\022\204\001\n\005check\022<.com.acmedcare.framework.sta" +
       "rter.control.protobuf.RequestDto\032;.com.a" +
       "cmedcare.framework.starter.control.proto" +
@@ -53,12 +53,12 @@ public final class DevOpsProto {
       "<.com.acmedcare.framework.starter.contro" +
       "l.protobuf.RequestDto\032;.com.acmedcare.fr" +
       "amework.starter.control.protobuf.ResultD" +
-      "to\"\000\022\206\001\n\007getInfo\022<.com.acmedcare.framewo" +
-      "rk.starter.control.protobuf.RequestDto\032;" +
+      "to\"\000\022\207\001\n\007getInfo\022<.com.acmedcare.framewo" +
+      "rk.starter.control.protobuf.RequestDto\032<" +
       ".com.acmedcare.framework.starter.control" +
-      ".protobuf.ResultDto\"\000BA\n0com.acmedcare.f" +
-      "ramework.starter.control.protobufB\013DevOp" +
-      "sProtoP\001b\006proto3"
+      ".protobuf.ServiceDto\"\000BA\n0com.acmedcare." +
+      "framework.starter.control.protobufB\013DevO" +
+      "psProtoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -69,19 +69,19 @@ public final class DevOpsProto {
     internal_static_com_acmedcare_framework_starter_control_protobuf_RequestDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_acmedcare_framework_starter_control_protobuf_RequestDto_descriptor,
-        new String[] { "Data", });
+        new java.lang.String[] { "Data", });
     internal_static_com_acmedcare_framework_starter_control_protobuf_ResultDto_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_acmedcare_framework_starter_control_protobuf_ResultDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_acmedcare_framework_starter_control_protobuf_ResultDto_descriptor,
-        new String[] { "Success", });
+        new java.lang.String[] { "Success", });
     internal_static_com_acmedcare_framework_starter_control_protobuf_ServiceDto_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_acmedcare_framework_starter_control_protobuf_ServiceDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_acmedcare_framework_starter_control_protobuf_ServiceDto_descriptor,
-        new String[] { "Name", "Ip", "Por", });
+        new java.lang.String[] { "Name", "Ip", "Por", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
