@@ -15,7 +15,7 @@ public class GrpcLauncher {
 
     ApplicationContextHelper.setApplicationContext(configurableApplicationContext);
     String port = configurableApplicationContext.getEnvironment()
-        .getProperty("acmedcare.control.port");
+        .getProperty("ServicePort");
 
     if (StringUtils.isEmpty(port)) {
       port = "9999";

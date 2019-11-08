@@ -101,7 +101,7 @@ public class DevOpsControllerImpl extends DevOpsControllerImplBase {
       if (applicationContext != null) {
 
         serviceDto = ServiceDto.newBuilder()
-            .setName(applicationContext.getApplicationName())
+            .setName(applicationContext.getEnvironment().getProperty("spring.application.name"))
             .setIp(getIp())
             .setPor(applicationContext.getEnvironment().getProperty("local.server.port"))
             .build();

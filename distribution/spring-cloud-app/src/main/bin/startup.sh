@@ -1,6 +1,6 @@
 #!/bin/bash
-SERVICE_NAME=microservices-spring-cloud-app
-SERVICE_VERSION=2.1.1.BUILD-SNAPSHOT
+SERVICE_NAME=devops-spring-cloud-app
+SERVICE_VERSION=0.1.0.BUILD-SNAPSHOT
 # Copyright 1999-2018 Acmedcare+ Group Holding Ltd.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

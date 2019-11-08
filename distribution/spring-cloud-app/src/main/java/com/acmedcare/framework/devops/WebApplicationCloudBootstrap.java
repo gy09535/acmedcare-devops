@@ -1,6 +1,8 @@
 package com.acmedcare.framework.devops;
 
+import com.acmedcare.framework.devops.endpoint.center.ControlCenterGrpc;
 import com.acmedcare.framework.starter.control.GrpcLauncher;
+import io.grpc.ServerBuilder;
 import java.io.IOException;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -30,6 +32,9 @@ public class WebApplicationCloudBootstrap {
         .web(WebApplicationType.SERVLET)
         .run(args);
 
+    ServerBuilder serverBuilder = ServerBuilder.forPort(9998);
+    serverBuilder.addService(new ControlCenterGrpc());
+    serverBuilder.build().start();
     GrpcLauncher.startControl(configurableApplicationContext);
   }
 }

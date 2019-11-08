@@ -63,6 +63,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.acmedcare.framework</groupId>
+            <artifactId>project-control-starter</artifactId>
+            <version>0.1.0.BUILD-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 
 
