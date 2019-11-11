@@ -5,9 +5,10 @@ import com.acmedcare.framework.starter.control.protobuf.DevOpsControllerGrpc.Dev
 import com.acmedcare.framework.starter.control.protobuf.RequestDto;
 import com.acmedcare.framework.starter.control.protobuf.ResultDto;
 import com.acmedcare.framework.starter.control.protobuf.ServiceDto;
-import java.net.Inet4Address;
 import java.net.InetAddress;
-import java.net.UnknownHostException;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Enumeration;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ConfigurableApplicationContext;
 
@@ -117,14 +118,27 @@ public class DevOpsControllerImpl extends DevOpsControllerImplBase {
 
   private String getIp() {
 
-    InetAddress localHost = null;
+    String SERVER_IP = null;
     try {
-      localHost = Inet4Address.getLocalHost();
-    } catch (UnknownHostException e) {
-      log.error(e.getMessage(), e);
+      Enumeration netInterfaces = NetworkInterface.getNetworkInterfaces();
+      InetAddress ip = null;
+      while (netInterfaces.hasMoreElements()) {
+        NetworkInterface ni = (NetworkInterface) netInterfaces.nextElement();
+        ip = (InetAddress) ni.getInetAddresses().nextElement();
+        SERVER_IP = ip.getHostAddress();
+        if (!ip.isSiteLocalAddress() && !ip.isLoopbackAddress()
+            && ip.getHostAddress().indexOf(":") == -1) {
+          SERVER_IP = ip.getHostAddress();
+          break;
+        } else {
+          ip = null;
+        }
+      }
+    } catch (SocketException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
     }
 
-    String ip = localHost.getHostAddress();
-    return ip;
+    return SERVER_IP;
   }
 }

@@ -1,5 +1,6 @@
 package com.acmedcare.framework.devops;
 
+import com.acmedcare.framework.devops.endpoint.CenterServer;
 import com.acmedcare.framework.devops.endpoint.center.ControlCenterGrpc;
 import com.acmedcare.framework.starter.control.GrpcLauncher;
 import io.grpc.ServerBuilder;
@@ -18,9 +19,9 @@ import xyz.vopen.tiffany.swagger.EnableSwagger2;
  * @version ${project.version} - 2019-03-12.
  */
 @EnableSwagger2
-@SpringBootApplication
+@SpringBootApplication(scanBasePackageClasses = CenterServer.class)
 @EnableDiscoveryClient
-public class WebApplicationCloudBootstrap {
+public class WebApplicationCloudBootstrap extends CenterServer {
 
   public static void main(String[] args) throws IOException {
     // new application
@@ -33,7 +34,7 @@ public class WebApplicationCloudBootstrap {
         .run(args);
 
     ServerBuilder serverBuilder = ServerBuilder.forPort(9998);
-    serverBuilder.addService(new ControlCenterGrpc());
+    serverBuilder.addService(configurableApplicationContext.getBean(ControlCenterGrpc.class));
     serverBuilder.build().start();
     GrpcLauncher.startControl(configurableApplicationContext);
   }
