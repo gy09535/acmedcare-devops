@@ -90,13 +90,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return  com.acmedcare.framework.devops.endpoint.center.DevOpsProto.internal_static_com_acmedcare_framework_devops_endpoint_center_Service_descriptor;
+    return  DevOpsProto.internal_static_com_acmedcare_framework_devops_endpoint_center_Service_descriptor;
   }
 
   @Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return  com.acmedcare.framework.devops.endpoint.center.DevOpsProto.internal_static_com_acmedcare_framework_devops_endpoint_center_Service_fieldAccessorTable
+    return  DevOpsProto.internal_static_com_acmedcare_framework_devops_endpoint_center_Service_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
              Service.class,  Builder.class);
   }
@@ -379,7 +379,7 @@ private static final long serialVersionUID = 0L;
 
   @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -389,16 +389,16 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.acmedcare.framework.devops.endpoint.center.Service)
-       com.acmedcare.framework.devops.endpoint.center.ServiceOrBuilder {
+       ServiceOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return  com.acmedcare.framework.devops.endpoint.center.DevOpsProto.internal_static_com_acmedcare_framework_devops_endpoint_center_Service_descriptor;
+      return  DevOpsProto.internal_static_com_acmedcare_framework_devops_endpoint_center_Service_descriptor;
     }
 
     @Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return  com.acmedcare.framework.devops.endpoint.center.DevOpsProto.internal_static_com_acmedcare_framework_devops_endpoint_center_Service_fieldAccessorTable
+      return  DevOpsProto.internal_static_com_acmedcare_framework_devops_endpoint_center_Service_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
                Service.class,  Builder.class);
     }
@@ -409,7 +409,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -433,7 +433,7 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return  com.acmedcare.framework.devops.endpoint.center.DevOpsProto.internal_static_com_acmedcare_framework_devops_endpoint_center_Service_descriptor;
+      return  DevOpsProto.internal_static_com_acmedcare_framework_devops_endpoint_center_Service_descriptor;
     }
 
     @Override

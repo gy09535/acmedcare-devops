@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
  * @author <a href="mailto:iskp.me@gmail.com">Elve.Xu</a>
  * @version ${project.version} - 2019-03-06.
  */
-@Service
 public class AccountService extends ServiceImpl<AccountRepository, Account> {
 
   private final AccountRepository accountRepository;

@@ -26,7 +26,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @version ${project.version} - 2019-03-06.
  */
 @SuppressWarnings("unused")
-@RestController
 @Api(tags = "账户体系Api")
 @RequestMapping("/account")
 public class AccountEndpoint {

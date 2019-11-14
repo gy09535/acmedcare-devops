@@ -11,7 +11,7 @@ public interface ServiceDtoOrBuilder extends
    * <code>string name = 1;</code>
    * @return The name.
    */
-  java.lang.String getName();
+  String getName();
   /**
    * <code>string name = 1;</code>
    * @return The bytes for name.
@@ -23,7 +23,7 @@ public interface ServiceDtoOrBuilder extends
    * <code>string ip = 2;</code>
    * @return The ip.
    */
-  java.lang.String getIp();
+  String getIp();
   /**
    * <code>string ip = 2;</code>
    * @return The bytes for ip.
@@ -32,14 +32,14 @@ public interface ServiceDtoOrBuilder extends
       getIpBytes();
 
   /**
-   * <code>string por = 3;</code>
-   * @return The por.
+   * <code>string port = 3;</code>
+   * @return The port.
    */
-  java.lang.String getPor();
+  String getPort();
   /**
-   * <code>string por = 3;</code>
-   * @return The bytes for por.
+   * <code>string port = 3;</code>
+   * @return The bytes for port.
    */
   com.google.protobuf.ByteString
-      getPorBytes();
+      getPortBytes();
 }

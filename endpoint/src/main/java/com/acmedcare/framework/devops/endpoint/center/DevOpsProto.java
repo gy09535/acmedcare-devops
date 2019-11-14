@@ -39,21 +39,22 @@ public final class DevOpsProto {
   static {
     String[] descriptorData = {
       "\n\024control_center.proto\022.com.acmedcare.fr" +
-      "amework.devops.endpoint.center\"j\n\tHeartB" +
+      "amework.devops.endpoint.center\"x\n\tHeartB" +
       "eat\022\023\n\013serviceName\030\001 \001(\t\022\024\n\014successCount" +
       "\030\002 \001(\005\022\021\n\tfailCount\030\003 \001(\005\022\n\n\002ip\030\004 \001(\t\022\023\n" +
-      "\013currentTime\030\005 \001(\003\"\'\n\006Result\022\017\n\007success\030" +
-      "\001 \001(\010\022\014\n\004data\030\002 \001(\t\"1\n\007Service\022\014\n\004name\030\001" +
-      " \001(\t\022\n\n\002ip\030\002 \001(\t\022\014\n\004port\030\003 \001(\t2\242\002\n\020Contr" +
-      "ollerCenter\022\204\001\n\017registerService\0227.com.ac" +
-      "medcare.framework.devops.endpoint.center" +
-      ".Service\0326.com.acmedcare.framework.devop" +
-      "s.endpoint.center.Result\"\000\022\206\001\n\017reportHea" +
-      "rtBeat\0229.com.acmedcare.framework.devops." +
-      "endpoint.center.HeartBeat\0326.com.acmedcar" +
-      "e.framework.devops.endpoint.center.Resul" +
-      "t\"\000B@\n/ com.acmedcare.framework.devops.e" +
-      "ndpoint.centerB\013DevOpsProtoP\001b\006proto3"
+      "\013currentTime\030\005 \001(\003\022\014\n\004port\030\006 \001(\t\"\'\n\006Resu" +
+      "lt\022\017\n\007success\030\001 \001(\010\022\014\n\004data\030\002 \001(\t\"1\n\007Ser" +
+      "vice\022\014\n\004name\030\001 \001(\t\022\n\n\002ip\030\002 \001(\t\022\014\n\004port\030\003" +
+      " \001(\t2\242\002\n\020ControllerCenter\022\204\001\n\017registerSe" +
+      "rvice\0227.com.acmedcare.framework.devops.e" +
+      "ndpoint.center.Service\0326.com.acmedcare.f" +
+      "ramework.devops.endpoint.center.Result\"\000" +
+      "\022\206\001\n\017reportHeartBeat\0229.com.acmedcare.fra" +
+      "mework.devops.endpoint.center.HeartBeat\032" +
+      "6.com.acmedcare.framework.devops.endpoin" +
+      "t.center.Result\"\000B@\n/ com.acmedcare.fram" +
+      "ework.devops.endpoint.centerB\013DevOpsProt" +
+      "oP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -64,7 +65,7 @@ public final class DevOpsProto {
     internal_static_com_acmedcare_framework_devops_endpoint_center_HeartBeat_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_acmedcare_framework_devops_endpoint_center_HeartBeat_descriptor,
-        new String[] { "ServiceName", "SuccessCount", "FailCount", "Ip", "CurrentTime", });
+        new String[] { "ServiceName", "SuccessCount", "FailCount", "Ip", "CurrentTime", "Port", });
     internal_static_com_acmedcare_framework_devops_endpoint_center_Result_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_acmedcare_framework_devops_endpoint_center_Result_fieldAccessorTable = new

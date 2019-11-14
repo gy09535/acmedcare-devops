@@ -5,10 +5,9 @@ import com.acmedcare.framework.starter.control.protobuf.DevOpsControllerGrpc.Dev
 import com.acmedcare.framework.starter.control.protobuf.RequestDto;
 import com.acmedcare.framework.starter.control.protobuf.ResultDto;
 import com.acmedcare.framework.starter.control.protobuf.ServiceDto;
+import java.io.IOException;
 import java.net.InetAddress;
-import java.net.NetworkInterface;
-import java.net.SocketException;
-import java.util.Enumeration;
+import java.net.Socket;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ConfigurableApplicationContext;
 
@@ -104,7 +103,7 @@ public class DevOpsControllerImpl extends DevOpsControllerImplBase {
         serviceDto = ServiceDto.newBuilder()
             .setName(applicationContext.getEnvironment().getProperty("spring.application.name"))
             .setIp(getIp())
-            .setPor(applicationContext.getEnvironment().getProperty("local.server.port"))
+            .setPort(applicationContext.getEnvironment().getProperty("local.server.port"))
             .build();
       }
     } catch (Throwable e) {
@@ -118,27 +117,20 @@ public class DevOpsControllerImpl extends DevOpsControllerImplBase {
 
   private String getIp() {
 
-    String SERVER_IP = null;
     try {
-      Enumeration netInterfaces = NetworkInterface.getNetworkInterfaces();
-      InetAddress ip = null;
-      while (netInterfaces.hasMoreElements()) {
-        NetworkInterface ni = (NetworkInterface) netInterfaces.nextElement();
-        ip = (InetAddress) ni.getInetAddresses().nextElement();
-        SERVER_IP = ip.getHostAddress();
-        if (!ip.isSiteLocalAddress() && !ip.isLoopbackAddress()
-            && ip.getHostAddress().indexOf(":") == -1) {
-          SERVER_IP = ip.getHostAddress();
-          break;
-        } else {
-          ip = null;
-        }
+      InetAddress addr = InetAddress.getByName("mysql.acmedcare.com");
+      Socket socket = new Socket(addr, 3306);
+      String address = socket.getLocalAddress().toString();
+      if (address.contains("/")) {
+
+        address = address.replace("/", "");
       }
-    } catch (SocketException e) {
-      // TODO Auto-generated catch block
+
+      return address;
+    } catch (IOException e) {
       e.printStackTrace();
     }
 
-    return SERVER_IP;
+    return "";
   }
 }

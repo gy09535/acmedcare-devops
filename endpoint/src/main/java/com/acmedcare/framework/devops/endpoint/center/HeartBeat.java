@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private HeartBeat() {
     serviceName_ = "";
     ip_ = "";
+    port_ = "";
   }
 
   @Override
@@ -77,6 +78,12 @@ private static final long serialVersionUID = 0L;
             currentTime_ = input.readInt64();
             break;
           }
+          case 50: {
+            String s = input.readStringRequireUtf8();
+
+            port_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -102,7 +109,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
     return  DevOpsProto.internal_static_com_acmedcare_framework_devops_endpoint_center_HeartBeat_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
@@ -211,6 +218,42 @@ private static final long serialVersionUID = 0L;
     return currentTime_;
   }
 
+  public static final int PORT_FIELD_NUMBER = 6;
+  private volatile Object port_;
+  /**
+   * <code>string port = 6;</code>
+   * @return The port.
+   */
+  public String getPort() {
+    Object ref = port_;
+    if (ref instanceof String) {
+      return (String) ref;
+    } else {
+      com.google.protobuf.ByteString bs =
+          (com.google.protobuf.ByteString) ref;
+      String s = bs.toStringUtf8();
+      port_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string port = 6;</code>
+   * @return The bytes for port.
+   */
+  public com.google.protobuf.ByteString
+      getPortBytes() {
+    Object ref = port_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (String) ref);
+      port_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @Override
   public final boolean isInitialized() {
@@ -240,6 +283,9 @@ private static final long serialVersionUID = 0L;
     if (currentTime_ != 0L) {
       output.writeInt64(5, currentTime_);
     }
+    if (!getPortBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, port_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -267,6 +313,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, currentTime_);
     }
+    if (!getPortBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, port_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -292,6 +341,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getIp())) return false;
     if (getCurrentTime()
         != other.getCurrentTime()) return false;
+    if (!getPort()
+        .equals(other.getPort())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -314,6 +365,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + CURRENTTIME_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getCurrentTime());
+    hash = (37 * hash) + PORT_FIELD_NUMBER;
+    hash = (53 * hash) + getPort().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -405,7 +458,7 @@ private static final long serialVersionUID = 0L;
 
   @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -415,14 +468,14 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.acmedcare.framework.devops.endpoint.center.HeartBeat)
-       com.acmedcare.framework.devops.endpoint.center.HeartBeatOrBuilder {
+       HeartBeatOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return  DevOpsProto.internal_static_com_acmedcare_framework_devops_endpoint_center_HeartBeat_descriptor;
     }
 
     @Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return  DevOpsProto.internal_static_com_acmedcare_framework_devops_endpoint_center_HeartBeat_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -435,7 +488,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -456,6 +509,8 @@ private static final long serialVersionUID = 0L;
       ip_ = "";
 
       currentTime_ = 0L;
+
+      port_ = "";
 
       return this;
     }
@@ -488,6 +543,7 @@ private static final long serialVersionUID = 0L;
       result.failCount_ = failCount_;
       result.ip_ = ip_;
       result.currentTime_ = currentTime_;
+      result.port_ = port_;
       onBuilt();
       return result;
     }
@@ -552,6 +608,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCurrentTime() != 0L) {
         setCurrentTime(other.getCurrentTime());
+      }
+      if (!other.getPort().isEmpty()) {
+        port_ = other.port_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -820,6 +880,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearCurrentTime() {
 
       currentTime_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private Object port_ = "";
+    /**
+     * <code>string port = 6;</code>
+     * @return The port.
+     */
+    public String getPort() {
+      Object ref = port_;
+      if (!(ref instanceof String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        port_ = s;
+        return s;
+      } else {
+        return (String) ref;
+      }
+    }
+    /**
+     * <code>string port = 6;</code>
+     * @return The bytes for port.
+     */
+    public com.google.protobuf.ByteString
+        getPortBytes() {
+      Object ref = port_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        port_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string port = 6;</code>
+     * @param value The port to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPort(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+
+      port_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string port = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPort() {
+
+      port_ = getDefaultInstance().getPort();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string port = 6;</code>
+     * @param value The bytes for port to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPortBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+      port_ = value;
       onChanged();
       return this;
     }

@@ -48,4 +48,16 @@ public interface HeartBeatOrBuilder extends
    * @return The currentTime.
    */
   long getCurrentTime();
+
+  /**
+   * <code>string port = 6;</code>
+   * @return The port.
+   */
+  String getPort();
+  /**
+   * <code>string port = 6;</code>
+   * @return The bytes for port.
+   */
+  com.google.protobuf.ByteString
+      getPortBytes();
 }

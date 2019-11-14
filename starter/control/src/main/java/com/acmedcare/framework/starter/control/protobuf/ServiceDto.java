@@ -18,17 +18,17 @@ private static final long serialVersionUID = 0L;
   private ServiceDto() {
     name_ = "";
     ip_ = "";
-    por_ = "";
+    port_ = "";
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new ServiceDto();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -39,7 +39,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -52,21 +52,21 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             name_ = s;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             ip_ = s;
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
-            por_ = s;
+            port_ = s;
             break;
           }
           default: {
@@ -90,31 +90,31 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.acmedcare.framework.starter.control.protobuf.DevOpsProto.internal_static_com_acmedcare_framework_starter_control_protobuf_ServiceDto_descriptor;
+    return DevOpsProto.internal_static_com_acmedcare_framework_starter_control_protobuf_ServiceDto_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.acmedcare.framework.starter.control.protobuf.DevOpsProto.internal_static_com_acmedcare_framework_starter_control_protobuf_ServiceDto_fieldAccessorTable
+    return DevOpsProto.internal_static_com_acmedcare_framework_starter_control_protobuf_ServiceDto_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.acmedcare.framework.starter.control.protobuf.ServiceDto.class, com.acmedcare.framework.starter.control.protobuf.ServiceDto.Builder.class);
+            ServiceDto.class, Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  private volatile Object name_;
   /**
    * <code>string name = 1;</code>
    * @return The name.
    */
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getName() {
+    Object ref = name_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
@@ -125,11 +125,11 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
+    Object ref = name_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       name_ = b;
       return b;
     } else {
@@ -138,19 +138,19 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IP_FIELD_NUMBER = 2;
-  private volatile java.lang.Object ip_;
+  private volatile Object ip_;
   /**
    * <code>string ip = 2;</code>
    * @return The ip.
    */
-  public java.lang.String getIp() {
-    java.lang.Object ref = ip_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getIp() {
+    Object ref = ip_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       ip_ = s;
       return s;
     }
@@ -161,11 +161,11 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getIpBytes() {
-    java.lang.Object ref = ip_;
-    if (ref instanceof java.lang.String) {
+    Object ref = ip_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       ip_ = b;
       return b;
     } else {
@@ -173,36 +173,36 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int POR_FIELD_NUMBER = 3;
-  private volatile java.lang.Object por_;
+  public static final int PORT_FIELD_NUMBER = 3;
+  private volatile Object port_;
   /**
-   * <code>string por = 3;</code>
-   * @return The por.
+   * <code>string port = 3;</code>
+   * @return The port.
    */
-  public java.lang.String getPor() {
-    java.lang.Object ref = por_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getPort() {
+    Object ref = port_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      por_ = s;
+      String s = bs.toStringUtf8();
+      port_ = s;
       return s;
     }
   }
   /**
-   * <code>string por = 3;</code>
-   * @return The bytes for por.
+   * <code>string port = 3;</code>
+   * @return The bytes for port.
    */
   public com.google.protobuf.ByteString
-      getPorBytes() {
-    java.lang.Object ref = por_;
-    if (ref instanceof java.lang.String) {
+      getPortBytes() {
+    Object ref = port_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      por_ = b;
+              (String) ref);
+      port_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -210,7 +210,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -220,7 +220,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
@@ -229,13 +229,13 @@ private static final long serialVersionUID = 0L;
     if (!getIpBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ip_);
     }
-    if (!getPorBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, por_);
+    if (!getPortBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, port_);
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -247,35 +247,35 @@ private static final long serialVersionUID = 0L;
     if (!getIpBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ip_);
     }
-    if (!getPorBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, por_);
+    if (!getPortBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, port_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.acmedcare.framework.starter.control.protobuf.ServiceDto)) {
+    if (!(obj instanceof ServiceDto)) {
       return super.equals(obj);
     }
-    com.acmedcare.framework.starter.control.protobuf.ServiceDto other = (com.acmedcare.framework.starter.control.protobuf.ServiceDto) obj;
+    ServiceDto other = (ServiceDto) obj;
 
     if (!getName()
         .equals(other.getName())) return false;
     if (!getIp()
         .equals(other.getIp())) return false;
-    if (!getPor()
-        .equals(other.getPor())) return false;
+    if (!getPort()
+        .equals(other.getPort())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -286,76 +286,76 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + IP_FIELD_NUMBER;
     hash = (53 * hash) + getIp().hashCode();
-    hash = (37 * hash) + POR_FIELD_NUMBER;
-    hash = (53 * hash) + getPor().hashCode();
+    hash = (37 * hash) + PORT_FIELD_NUMBER;
+    hash = (53 * hash) + getPort().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.acmedcare.framework.starter.control.protobuf.ServiceDto parseFrom(
+  public static ServiceDto parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.acmedcare.framework.starter.control.protobuf.ServiceDto parseFrom(
+  public static ServiceDto parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.acmedcare.framework.starter.control.protobuf.ServiceDto parseFrom(
+  public static ServiceDto parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.acmedcare.framework.starter.control.protobuf.ServiceDto parseFrom(
+  public static ServiceDto parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.acmedcare.framework.starter.control.protobuf.ServiceDto parseFrom(byte[] data)
+  public static ServiceDto parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.acmedcare.framework.starter.control.protobuf.ServiceDto parseFrom(
+  public static ServiceDto parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.acmedcare.framework.starter.control.protobuf.ServiceDto parseFrom(java.io.InputStream input)
+  public static ServiceDto parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.acmedcare.framework.starter.control.protobuf.ServiceDto parseFrom(
+  public static ServiceDto parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.acmedcare.framework.starter.control.protobuf.ServiceDto parseDelimitedFrom(java.io.InputStream input)
+  public static ServiceDto parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.acmedcare.framework.starter.control.protobuf.ServiceDto parseDelimitedFrom(
+  public static ServiceDto parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.acmedcare.framework.starter.control.protobuf.ServiceDto parseFrom(
+  public static ServiceDto parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.acmedcare.framework.starter.control.protobuf.ServiceDto parseFrom(
+  public static ServiceDto parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -363,23 +363,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.acmedcare.framework.starter.control.protobuf.ServiceDto prototype) {
+  public static Builder newBuilder(ServiceDto prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -389,18 +389,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:com.acmedcare.framework.starter.control.protobuf.ServiceDto)
-      com.acmedcare.framework.starter.control.protobuf.ServiceDtoOrBuilder {
+      ServiceDtoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.acmedcare.framework.starter.control.protobuf.DevOpsProto.internal_static_com_acmedcare_framework_starter_control_protobuf_ServiceDto_descriptor;
+      return DevOpsProto.internal_static_com_acmedcare_framework_starter_control_protobuf_ServiceDto_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.acmedcare.framework.starter.control.protobuf.DevOpsProto.internal_static_com_acmedcare_framework_starter_control_protobuf_ServiceDto_fieldAccessorTable
+      return DevOpsProto.internal_static_com_acmedcare_framework_starter_control_protobuf_ServiceDto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.acmedcare.framework.starter.control.protobuf.ServiceDto.class, com.acmedcare.framework.starter.control.protobuf.ServiceDto.Builder.class);
+              ServiceDto.class, Builder.class);
     }
 
     // Construct using com.acmedcare.framework.starter.control.protobuf.ServiceDto.newBuilder()
@@ -409,7 +409,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -418,92 +418,92 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       name_ = "";
 
       ip_ = "";
 
-      por_ = "";
+      port_ = "";
 
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.acmedcare.framework.starter.control.protobuf.DevOpsProto.internal_static_com_acmedcare_framework_starter_control_protobuf_ServiceDto_descriptor;
+      return DevOpsProto.internal_static_com_acmedcare_framework_starter_control_protobuf_ServiceDto_descriptor;
     }
 
-    @java.lang.Override
-    public com.acmedcare.framework.starter.control.protobuf.ServiceDto getDefaultInstanceForType() {
-      return com.acmedcare.framework.starter.control.protobuf.ServiceDto.getDefaultInstance();
+    @Override
+    public ServiceDto getDefaultInstanceForType() {
+      return ServiceDto.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.acmedcare.framework.starter.control.protobuf.ServiceDto build() {
-      com.acmedcare.framework.starter.control.protobuf.ServiceDto result = buildPartial();
+    @Override
+    public ServiceDto build() {
+      ServiceDto result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.acmedcare.framework.starter.control.protobuf.ServiceDto buildPartial() {
-      com.acmedcare.framework.starter.control.protobuf.ServiceDto result = new com.acmedcare.framework.starter.control.protobuf.ServiceDto(this);
+    @Override
+    public ServiceDto buildPartial() {
+      ServiceDto result = new ServiceDto(this);
       result.name_ = name_;
       result.ip_ = ip_;
-      result.por_ = por_;
+      result.port_ = port_;
       onBuilt();
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.acmedcare.framework.starter.control.protobuf.ServiceDto) {
-        return mergeFrom((com.acmedcare.framework.starter.control.protobuf.ServiceDto)other);
+      if (other instanceof ServiceDto) {
+        return mergeFrom((ServiceDto)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.acmedcare.framework.starter.control.protobuf.ServiceDto other) {
-      if (other == com.acmedcare.framework.starter.control.protobuf.ServiceDto.getDefaultInstance()) return this;
+    public Builder mergeFrom(ServiceDto other) {
+      if (other == ServiceDto.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -512,8 +512,8 @@ private static final long serialVersionUID = 0L;
         ip_ = other.ip_;
         onChanged();
       }
-      if (!other.getPor().isEmpty()) {
-        por_ = other.por_;
+      if (!other.getPort().isEmpty()) {
+        port_ = other.port_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -521,21 +521,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.acmedcare.framework.starter.control.protobuf.ServiceDto parsedMessage = null;
+      ServiceDto parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.acmedcare.framework.starter.control.protobuf.ServiceDto) e.getUnfinishedMessage();
+        parsedMessage = (ServiceDto) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -545,21 +545,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private Object name_ = "";
     /**
      * <code>string name = 1;</code>
      * @return The name.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getName() {
+      Object ref = name_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         name_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -568,11 +568,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
-      java.lang.Object ref = name_;
+      Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         name_ = b;
         return b;
       } else {
@@ -585,7 +585,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setName(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -621,21 +621,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object ip_ = "";
+    private Object ip_ = "";
     /**
      * <code>string ip = 2;</code>
      * @return The ip.
      */
-    public java.lang.String getIp() {
-      java.lang.Object ref = ip_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getIp() {
+      Object ref = ip_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         ip_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -644,11 +644,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getIpBytes() {
-      java.lang.Object ref = ip_;
+      Object ref = ip_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         ip_ = b;
         return b;
       } else {
@@ -661,7 +661,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setIp(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -697,88 +697,88 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object por_ = "";
+    private Object port_ = "";
     /**
-     * <code>string por = 3;</code>
-     * @return The por.
+     * <code>string port = 3;</code>
+     * @return The port.
      */
-    public java.lang.String getPor() {
-      java.lang.Object ref = por_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getPort() {
+      Object ref = port_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        por_ = s;
+        String s = bs.toStringUtf8();
+        port_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
-     * <code>string por = 3;</code>
-     * @return The bytes for por.
+     * <code>string port = 3;</code>
+     * @return The bytes for port.
      */
     public com.google.protobuf.ByteString
-        getPorBytes() {
-      java.lang.Object ref = por_;
+        getPortBytes() {
+      Object ref = port_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        por_ = b;
+                (String) ref);
+        port_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string por = 3;</code>
-     * @param value The por to set.
+     * <code>string port = 3;</code>
+     * @param value The port to set.
      * @return This builder for chaining.
      */
-    public Builder setPor(
-        java.lang.String value) {
+    public Builder setPort(
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      por_ = value;
+      port_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string por = 3;</code>
+     * <code>string port = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearPor() {
+    public Builder clearPort() {
       
-      por_ = getDefaultInstance().getPor();
+      port_ = getDefaultInstance().getPort();
       onChanged();
       return this;
     }
     /**
-     * <code>string por = 3;</code>
-     * @param value The bytes for por to set.
+     * <code>string port = 3;</code>
+     * @param value The bytes for port to set.
      * @return This builder for chaining.
      */
-    public Builder setPorBytes(
+    public Builder setPortBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      por_ = value;
+      port_ = value;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -789,18 +789,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:com.acmedcare.framework.starter.control.protobuf.ServiceDto)
-  private static final com.acmedcare.framework.starter.control.protobuf.ServiceDto DEFAULT_INSTANCE;
+  private static final ServiceDto DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.acmedcare.framework.starter.control.protobuf.ServiceDto();
+    DEFAULT_INSTANCE = new ServiceDto();
   }
 
-  public static com.acmedcare.framework.starter.control.protobuf.ServiceDto getDefaultInstance() {
+  public static ServiceDto getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<ServiceDto>
       PARSER = new com.google.protobuf.AbstractParser<ServiceDto>() {
-    @java.lang.Override
+    @Override
     public ServiceDto parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -813,13 +813,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<ServiceDto> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.acmedcare.framework.starter.control.protobuf.ServiceDto getDefaultInstanceForType() {
+  @Override
+  public ServiceDto getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
