@@ -13,9 +13,7 @@ import com.acmedcare.framework.devops.repository.ServiceRepository;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -27,18 +25,16 @@ public class ControlCenterGrpc extends ControllerCenterImplBase {
   final HeartBeatRepository heartBeatRepository;
   final ServiceInstanceRepository instanceRepository;
   final Snowflake snowflake;
-  final StringRedisTemplate redisTemplate;
 
   public ControlCenterGrpc(
       ServiceRepository serviceRepository,
       HeartBeatRepository heartBeatRepository,
       ServiceInstanceRepository instanceRepository,
-      Snowflake snowflake, StringRedisTemplate redisTemplate) {
+      Snowflake snowflake) {
     this.serviceRepository = serviceRepository;
     this.heartBeatRepository = heartBeatRepository;
     this.instanceRepository = instanceRepository;
     this.snowflake = snowflake;
-    this.redisTemplate = redisTemplate;
   }
 
   /**
@@ -153,9 +149,6 @@ public class ControlCenterGrpc extends ControllerCenterImplBase {
         int per = (heartBeat.getSuccessCount() * 100) / total;
         if (per > 70) {
           //如果服务超过百分之70成功则认为成功
-          redisTemplate.opsForValue()
-              .set(String.format("%s:%s:%s", request.getServiceName(), request.getIp(),
-                  serviceInstance.getPort()), "true", 70, TimeUnit.SECONDS);
           serviceInstance.setAlive(true);
         } else {
           serviceInstance.setAlive(false);

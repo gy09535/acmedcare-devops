@@ -14,7 +14,6 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import java.security.InvalidParameterException;
 import lombok.Data;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -25,17 +24,14 @@ public class CenterServiceImp {
 
   final ServiceInstanceRepository instanceRepository;
 
-  final StringRedisTemplate stringRedisTemplate;
   final RabbitTemplate rabbitTemplate;
 
   public CenterServiceImp(
       ServiceRepository serviceRepository,
       ServiceInstanceRepository instanceRepository,
-      StringRedisTemplate stringRedisTemplate,
       RabbitTemplate rabbitTemplate) {
     this.serviceRepository = serviceRepository;
     this.instanceRepository = instanceRepository;
-    this.stringRedisTemplate = stringRedisTemplate;
     this.rabbitTemplate = rabbitTemplate;
   }
 
@@ -63,20 +59,6 @@ public class CenterServiceImp {
 
     MyPage<ServiceInstance> instancePage = ConvertUtils
         .convertPage(instanceRepository.selectPage(page, queryWrapper));
-    if (instancePage.getList().isEmpty()) {
-
-      return instancePage;
-    }
-
-    instancePage.getList().forEach(c -> {
-
-      String alive = stringRedisTemplate.opsForValue()
-          .get(String.format("%s:%s:%s", c.getServiceName(), c.getIp(),
-              c.getPort()));
-      if (!StringUtils.isEmpty(alive)) {
-        c.setAlive(true);
-      }
-    });
 
     return instancePage;
   }
