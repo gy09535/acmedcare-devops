@@ -1,6 +1,5 @@
 package com.acmedcare.framework.devops;
 
-import com.acmedcare.framework.boot.snowflake.EnableSnowflake;
 import com.acmedcare.framework.devops.endpoint.CenterServer;
 import com.acmedcare.framework.devops.endpoint.center.ControlCenterGrpc;
 import com.acmedcare.framework.starter.control.GrpcLauncher;

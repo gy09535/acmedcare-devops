@@ -44,7 +44,9 @@ public class ServiceHealthCheck extends ServiceImpl<ServiceInstanceRepository, S
         }
       });
 
-      updateBatchById(serviceInstances);
+      if (!serviceInstances.isEmpty()) {
+        updateBatchById(serviceInstances);
+      }
     } catch (Exception e) {
       log.error("执行服务健康检查发生错误!", e);
     }
