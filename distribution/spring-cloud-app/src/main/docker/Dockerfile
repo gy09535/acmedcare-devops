@@ -1,13 +1,7 @@
-# Dockerfile for microservices-spring-cloud-app
-# Build with:
-# docker build -t microservices-spring-cloud-app .
-# Run with:
-# docker run -p 19090:19090 -d -v /tmp/logs:/opt/logs --name microservices-spring-cloud-app microservices-spring-cloud-app
+FROM docker.apiacmed.com/acmedback/kernel:0.1.0
+MAINTAINER stefan.gu
 
-FROM openjdk:8-jre-alpine
-MAINTAINER Elve.Xu <iskp.me@gmail.com>
-
-ENV VERSION 2.1.0.BUILD-SNAPSHOT
+ENV VERSION 0.1.0.BUILD-SNAPSHOT
 
 RUN echo "http://mirrors.aliyun.com/alpine/v3.6/main" > /etc/apk/repositories \
     && echo "http://mirrors.aliyun.com/alpine/v3.6/community" >> /etc/apk/repositories \
@@ -16,13 +10,15 @@ RUN echo "http://mirrors.aliyun.com/alpine/v3.6/main" > /etc/apk/repositories \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone
 
-ADD microservices-spring-cloud-app-${VERSION}.zip /microservices-spring-cloud-app/microservices-spring-cloud-app-${VERSION}.zip
+ADD devops-spring-cloud-app-${VERSION}.zip /devops-spring-cloud-app/devops-spring-cloud-app-${VERSION}.zip
 
-RUN unzip /microservices-spring-cloud-app/microservices-spring-cloud-app-${VERSION}.zip -d /microservices-spring-cloud-app \
-    && rm -rf /microservices-spring-cloud-app/microservices-spring-cloud-app-${VERSION}.zip \
-    && sed -i '$d' /microservices-spring-cloud-app/bin/startup.sh \
-    && echo "tail -f /dev/null" >> /microservices-spring-cloud-app/bin/startup.sh
+RUN unzip /devops-spring-cloud-app/devops-spring-cloud-app-${VERSION}.zip -d /devops-spring-cloud-app \
+    && rm -rf /devops-spring-cloud-app/devops-spring-cloud-app-${VERSION}.zip \
+    && sed -i '$d' /devops-spring-cloud-app/bin/startup.sh
 
-EXPOSE 19090
+ENV ServiceRoot /devops-spring-cloud-app
 
-CMD ["/microservices-spring-cloud-app/bin/startup.sh"]
+ENV ControlCenterAddress 127.0.0.1:9998
+EXPOSE 7070
+CMD ["/go/src/acmed.com/kernel/cmd/startup.sh"]
+
