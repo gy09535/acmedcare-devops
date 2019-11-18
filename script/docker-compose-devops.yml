@@ -1,0 +1,32 @@
+version: "2.4"
+networks:
+  docker-br0:
+    external: true
+services:
+
+  Exchange-center-open-api:
+    image: docker.apiacmed.com/acmedback/devops:0.1.0.BUILD-SNAPSHOT
+    container_name: "exchange-center-open-api"
+    ports:
+      - "7070:7070"
+    #      - "13110:13110"
+    environment:
+      - ExecutorName=work1
+      - ExecutorGroupName=dev
+    extra_hosts:
+      - "nacos.acmedcare.com:172.172.1.3"
+      - "mysql.acmedcare.com:172.172.1.101"
+      - "trace.acmedcare.com:192.168.1.199"
+      - "redis.acmedcare.com:172.172.1.101"
+      - "nas.acmedcare.com:172.172.1.109"
+      - "node1.mongodb.acmedcare.com:172.172.0.103"
+      - "node2.mongodb.acmedcare.com:172.172.0.104"
+      - "node3.mongodb.acmedcare.com:172.172.0.105"
+      - "gateway.acmedcare.com:172.172.1.108"
+      - "rabbit.acmedcare.com:192.168.1.126"
+      - "sql.acmedcare.com:192.168.1.8"
+    volumes:
+      - /tmp/devops-spring-cloud-app:/devops-spring-cloud-app/logs
+    networks:
+      docker-br0:
+        ipv4_address: 172.172.2.121
