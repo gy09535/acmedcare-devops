@@ -4,12 +4,11 @@ networks:
     external: true
 services:
 
-  Exchange-center-open-api:
+  dev-ops-web:
     image: docker.apiacmed.com/acmedback/devops:0.1.0.BUILD-SNAPSHOT
-    container_name: "exchange-center-open-api"
+    container_name: "dev-ops-web"
     ports:
       - "7070:7070"
-    #      - "13110:13110"
     environment:
       - ExecutorName=work1
       - ExecutorGroupName=dev
@@ -29,4 +28,4 @@ services:
       - /tmp/devops-spring-cloud-app:/devops-spring-cloud-app/logs
     networks:
       docker-br0:
-        ipv4_address: 172.172.2.121
+        ipv4_address: 172.172.2.125
