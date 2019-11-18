@@ -14,12 +14,10 @@ ADD devops-spring-cloud-app-${VERSION}.zip /devops-spring-cloud-app/devops-sprin
 
 RUN unzip /devops-spring-cloud-app/devops-spring-cloud-app-${VERSION}.zip -d /devops-spring-cloud-app \
     && rm -rf /devops-spring-cloud-app/devops-spring-cloud-app-${VERSION}.zip \
-    && sed -i '$d' /devops-spring-cloud-app/bin/startup.sh \
-    && echo "tail -f /devops-spring-cloud-app/logs/start.log" >> /devops-spring-cloud-app/bin/startup.sh
+    && sed -i '$d' /devops-spring-cloud-app/bin/startup.sh
 
 ENV ServiceRoot /devops-spring-cloud-app
 
 ENV ControlCenterAddress 127.0.0.1:9998
 EXPOSE 7070
 CMD ["sh","/go/src/acmed.com/kernel/cmd/startup.sh"]
-
