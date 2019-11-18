@@ -20,4 +20,4 @@ ENV ServiceRoot /devops-spring-cloud-app
 
 ENV ControlCenterAddress 127.0.0.1:9998
 EXPOSE 7070
-CMD ["sh","/go/src/acmed.com/kernel/cmd/startup.sh"]
+CMD ["sh","/go/startup.sh"]
