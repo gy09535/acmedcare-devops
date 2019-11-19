@@ -1,4 +1,4 @@
-<img src="doc/Acmedcare-Microservices-Project-Template-LOGO.png" width="128px" heigth="128px" alt=Acmedcare-DBM System Logo" />
+<img src="./doc/Acmedcare-Microservices-Project-Template-LOGO.png" width="128px" heigth="128px" alt=Acmedcare-DBM System Logo" />
 
 ## Acmedcare+ DevOps
 
@@ -6,7 +6,7 @@
 Must work with sidecar(more sidecar info in [Kernel](http://115.29.47.72:8082/acmedback/kernel))
 
 ### Overview
-<img src="doc/operation-system.png" width="800px" heigth="800px" alt=Acmedcare-DevOps" />
+<img src="./doc/operation-system.png" width="800px" heigth="800px" alt=Acmedcare-DevOps" />
 
 ### Requirements
 
