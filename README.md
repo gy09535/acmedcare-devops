@@ -1,4 +1,4 @@
-<img src="./doc/Acmedcare-Microservices-Project-Template-LOGO.png" width="128px" heigth="128px" alt=Acmedcare-DBM System Logo" />
+<img src="https://raw.githubusercontent.com/gy09535/acmedcare-devops/master/doc/Acmedcare-Microservices-Project-Template-LOGO.png" width="128px" heigth="128px" alt=Acmedcare-DBM System Logo" />
 
 ## Acmedcare+ DevOps
 
