@@ -1,42 +1,12 @@
 <img src="doc/Acmedcare-Microservices-Project-Template-LOGO.png" width="128px" heigth="128px" alt=Acmedcare-DBM System Logo" />
 
-## Acmedcare+ Micro-services Template Project
+## Acmedcare+ DevOps
 
-> A micro-services sample project.
+> Simple operation platform, with service register, service discover, service control. 
+Must work with sidecar(more sidecar info in [Kernel](http://115.29.47.72:8082/acmedback/kernel))
 
 ### Overview
-
-```
-
-├── CHANGELOG.md                                            #   版本发布日志
-├── LICENSE                                                 #   版权
-├── README.md                                               #   项目描述文件
-│
-├── api                                                     #   项目基础模块:定义实体,接口等等
-├── client                                                  #   客户端用于第三方调用/服务间通讯/SDK等等
-│   ├── spring-cloud-openfeign-client                       #   服务间调用的Client依赖模块
-│   └── spring-cloud-openfeign-client-sample                #   服务间调用的Client的 demo模块
-│       
-├── common                                                  #   项目公共模块:定义工具类,常量等等
-│   
-├── distribution                                            #   项目分发模块:支持区域/单体/云/离线等等模式
-│   
-├── doc                                                     #├── 项目文档
-│   └── database                                             │   └── 数据库设计文档
-│       └── account                                          │       └── 案例:通行证账号设计
-│           ├── Account\ Model\ Design.ndm                   │           ├── ER图         
-│           └── Account.sql                                  └───────────└── 脚本
-│
-├── endpoint                                                #   项目资源端口模块:RESTful
-│   
-├── repository                                              #├── 项目持久化模块
-│   ├── repository-api                                       │   ├── 项目持久化接口模块
-│   └── repository-jdbc                                      └───────└── 持久化 Simple JDBC 实现
-│
-├── test                                                    #   项目集成测试模块
-└── pom.xml
-
-```
+<img src="doc/operation-system.png" width="500px" heigth="500px" alt=Acmedcare-DevOps" />
 
 ### Requirements
 
@@ -46,21 +16,31 @@ Acmedcare+ Maven Repository Configuration
 
 ### Quick Start
 
-You can download binaries from [Release Repo](http://115.29.47.72:8082/acmedback/Acmedcare-Microservices-Project-Template/tree/master/release) or [repo.acmedcare.com](http://47.97.26.165:8081/repository/maven-public/).
-
-*First* : unzip release package
-
+Download Code 
 ```bash
-$ tar -zxvf *.tar.gz
+$ git clone http://115.29.47.72:8082/acmedback/acmedcare-devops.git -b master
+
+$ cd acmedcare-devops
+
+$ mvn clean package -Dmaven.test.skip=true
+
+$ ./distribution/spring-cloud-app/target
+
 ```
 
-*Second* : startup & shutdown
+*First* : Build docker image
 
 ```bash
-$ sh ./bin/startup.sh -p production  
+$ docker build -t devops:0.1.0.BUILD-SNAPSHOT -f /distribution/spring-cloud-app/src/main/docker/Dockerfile ./distribution/spring-cloud-app/target
 ```
 
-*Third* : check the application log
+*Second* : Run image
+
+```bash
+$ docker-compose -f ./script/docker-compose-devops.yml
+```
+
+*Third* : Check the application log
 
 ```bash
 $ tail -f logs/start.log
@@ -69,22 +49,12 @@ $ tail -f logs/start.log
 > param: -p (optional): `production` | `dev`
 
 
-### Building from Source
+### One step build
 
-You don’t need to build from source to use `Acmedcare+ Template Project` (binaries in [repo.acmedcare.com](http://47.97.26.165:8081/repository/maven-public/)), 
-but if you want to try out the latest and greatest, 
-`Acmedcare+ Template Project` can be easily built with the maven wrapper. You also need JDK 1.8.
-
-*First* : git clone source from gitlab
+*First* : Just run script
  
 ```bash
-$ git clone http://115.29.47.72:8082/acmedback/Acmedcare-Microservices-Project-Template.git
-```
-
-*Second* : build
-
-```bash
-$ mvn clean install
+$ sh ./script/devops-image-build.sh
 ```
 
 If you want to build with the regular `mvn` command, you will need [Maven v3.5.0 or above](https://maven.apache.org/run-maven/index.html).
@@ -93,7 +63,6 @@ If you want to build with the regular `mvn` command, you will need [Maven v3.5.0
 ### Document
 
 > editing
-
 
 ### License
  
