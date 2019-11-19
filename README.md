@@ -6,7 +6,7 @@
 Must work with sidecar(more sidecar info in [Kernel](http://115.29.47.72:8082/acmedback/kernel))
 
 ### Overview
-<img src="doc/operation-system.png" width="500px" heigth="500px" alt=Acmedcare-DevOps" />
+<img src="doc/operation-system.png" width="800px" heigth="800px" alt=Acmedcare-DevOps" />
 
 ### Requirements
 
