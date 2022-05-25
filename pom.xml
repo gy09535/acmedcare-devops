@@ -28,7 +28,7 @@
         <!-- Framework's version -->
         <spring.cloud.version>Finchley.SR2</spring.cloud.version>
         <spring.boot.version>2.0.8.RELEASE</spring.boot.version>
-        <spring.framework.version>5.0.12.RELEASE</spring.framework.version>
+        <spring.framework.version>5.2.22.RELEASE</spring.framework.version>
         <jaeger.opentracing.version>1.0.1</jaeger.opentracing.version>
         <swagger.version>1.5.14</swagger.version>
         <springfox.swagger.version>2.8.0</springfox.swagger.version>
